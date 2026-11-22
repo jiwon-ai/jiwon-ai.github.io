@@ -1,1 +1,157 @@
-<meta http-equiv="refresh" content="0; url=https://github.com/jiwon-ai">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jiwon Yi — Data Analyst</title>
+<meta name="description" content="Jiwon Yi — Data Analyst in Paris. SQL, Python, BI. Retail and beauty analytics, Korea–France.">
+<style>
+:root{--bg:#fbfaf8;--fg:#1d2329;--muted:#5d6873;--line:#e4e1dc;--card:#fff;--accent:#2a6f97;--accent2:#c8553d}
+@media (prefers-color-scheme:dark){:root{--bg:#14181c;--fg:#e8ebee;--muted:#9aa5b1;--line:#2a3037;--card:#1b2026;--accent:#7fb8da;--accent2:#e8907c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{padding:64px 0 28px}
+h1{font-size:2.3rem;line-height:1.15;margin:0 0 8px;letter-spacing:-.02em}
+.role{font-size:1.15rem;color:var(--accent);font-weight:600;margin:0 0 16px}
+.lead{max-width:680px;color:var(--muted);margin:0 0 20px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{border:1px solid var(--line);border-radius:999px;padding:6px 14px;color:var(--fg);text-decoration:none;font-size:.92rem;background:var(--card)}
+.links a:hover{border-color:var(--accent)}
+h2{font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:48px 0 16px;font-weight:600}
+.featured{display:grid;gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.feat{display:grid;grid-template-columns:1.1fr 1fr}
+.feat img{width:100%;height:100%;object-fit:contain;background:#fff;padding:10px;border-left:1px solid var(--line)}
+.body{padding:22px 24px}
+.card h3{margin:0 0 6px;font-size:1.15rem;line-height:1.3}
+.card p{margin:0 0 12px;color:var(--muted);font-size:.95rem}
+.card ul{margin:0 0 14px;padding-left:18px;font-size:.93rem}
+.card li{margin:3px 0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.tags span{font-size:.75rem;padding:2px 9px;border-radius:999px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent)}
+.card a.more{color:var(--accent);font-weight:600;text-decoration:none;font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.grid .body{padding:18px 20px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cols .card .body p{margin:0 0 6px}
+b{color:var(--fg)}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:24px 0 40px;color:var(--muted);font-size:.85rem}
+@media (max-width:720px){.feat{grid-template-columns:1fr}.feat img{border-left:0;border-top:1px solid var(--line);max-height:320px}.cols{grid-template-columns:1fr}h1{font-size:1.9rem}header{padding-top:40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Jiwon Yi</h1>
+  <p class="role">Data Analyst · Paris</p>
+  <p class="lead">I turn raw data into business decisions — SQL, Python and BI, with a background in international business. Master's student in <b>Sorbonne Data Analytics</b> (Université Paris 1 Panthéon-Sorbonne), founder of the K-beauty platform <b>Fiomio</b>. Most interested in consumer data: beauty, fashion and retail, and Korean brands growing in Europe. Korean · French · English · Japanese.</p>
+  <div class="links">
+    <a href="mailto:jiwonyi.data@gmail.com">jiwonyi.data@gmail.com</a>
+    <a href="https://www.linkedin.com/in/jiwonyi/">LinkedIn</a>
+    <a href="https://github.com/jiwon-ai">GitHub</a>
+    <a href="https://fiomio.io">fiomio.io</a>
+  </div>
+</header>
+
+<h2>Featured projects</h2>
+<div class="featured">
+  <article class="card feat">
+    <div class="body">
+      <h3>Online retail analytics — revenue, retention &amp; customer value</h3>
+      <p>Two years of real transactions (1.07 M invoice lines) from a UK online retailer, modelled in SQL and turned into recommendations.</p>
+      <ul>
+        <li>Layered DuckDB model (staging → facts → dimensions) with automated data-quality checks</li>
+        <li>Growth was flat (+0.1 %), so retention is the lever: ~21 % of new customers return the next month</li>
+        <li>27 % of customers ("Champions") = 70 % of revenue; 1,210 at-risk customers worth £1.85 M lifetime</li>
+      </ul>
+      <div class="tags"><span>SQL</span><span>DuckDB</span><span>Python</span><span>Cohorts</span><span>RFM</span></div>
+      <a class="more" href="https://github.com/jiwon-ai/retail-sales-analytics">View project →</a>
+    </div>
+    <img src="assets/retail.jpg" alt="RFM segments: share of customers vs share of revenue" loading="lazy">
+  </article>
+
+  <article class="card feat">
+    <div class="body">
+      <h3>K-beauty vs. the European face-care shelf</h3>
+      <p>Ingredient lists of 2,608 face-care products from the Open Beauty Facts database, Korean brands vs. the rest, with statistical tests.</p>
+      <ul>
+        <li>Korean-brand products are half as likely to contain fragrance (29 % vs 58 %)</li>
+        <li>Centella, adenosine and niacinamide are each in ≤ 4 % of face care sold in France — white space</li>
+        <li>Fisher tests with Benjamini-Hochberg correction; documented audit of crowdsourced data quality</li>
+      </ul>
+      <div class="tags"><span>Python</span><span>pandas</span><span>Statistics</span><span>Beauty</span><span>Market analysis</span></div>
+      <a class="more" href="https://github.com/jiwon-ai/kbeauty-ingredients-analysis">View project →</a>
+    </div>
+    <img src="assets/kbeauty.jpg" alt="Ingredients where Korean-brand formulas differ" loading="lazy">
+  </article>
+
+  <article class="card feat">
+    <div class="body">
+      <h3>Master's thesis — regime-adaptive trading on Nasdaq &amp; gold futures</h3>
+      <p>Université Paris 1, 2025–2026. A market-regime classifier (VIX, macro calendar, sentiment proxy) switches between mean-reversion and breakout strategies.</p>
+      <ul>
+        <li>Out-of-sample 2022–2025: dynamic NQ/GC strategy Sharpe 1.11, max drawdown −4.5 %</li>
+        <li>Bootstrap 95 % CI for the Sharpe ratio [0.19, 1.98] — excludes zero</li>
+        <li>Five research hypotheses tested, including performance by regime</li>
+      </ul>
+      <div class="tags"><span>Python</span><span>Time series</span><span>Backtesting</span><span>Bootstrap</span></div>
+      <a class="more" href="https://github.com/jiwon-ai/Paris1_nasdaqandgold">View project →</a>
+    </div>
+    <img src="assets/thesis.jpg" alt="Equity curves of the trading strategies" loading="lazy">
+  </article>
+</div>
+
+<h2>More work</h2>
+<div class="grid">
+  <article class="card"><div class="body">
+    <h3>Fiomio recommendation engine</h3>
+    <p>Explainable skincare recommender: rule engine, multi-label Random Forest, semantic search and LLM re-ranking behind a FastAPI.</p>
+    <div class="tags"><span>Python</span><span>scikit-learn</span><span>FastAPI</span><span>LLM</span></div>
+    <a class="more" href="https://github.com/jiwon-ai/daily-coding/tree/main/ml_project02_fiomio_skin">Code →</a>
+  </div></article>
+  <article class="card"><div class="body">
+    <h3>Fiomio — K-beauty platform</h3>
+    <p>Founder. Personalised, explained ingredient recommendations crossing skin profile, local climate and active ingredients. FR/EN.</p>
+    <div class="tags"><span>Product</span><span>Next.js</span><span>Open data</span></div>
+    <a class="more" href="https://fiomio.io">fiomio.io →</a>
+  </div></article>
+  <article class="card"><div class="body">
+    <h3>Credit default prediction app</h3>
+    <p>Course project with Jordan Pindoh: predicting next-month default for 30,000 credit-card clients, served in a Streamlit app.</p>
+    <div class="tags"><span>Python</span><span>ML</span><span>Streamlit</span></div>
+    <a class="more" href="https://github.com/jiwon-ai/SDA_Python">Code →</a>
+  </div></article>
+  <article class="card"><div class="body">
+    <h3>Sales data warehouse for Power BI</h3>
+    <p>Course project: star schema, Python ETL pipeline and SQLite warehouse for a retail sales dashboard.</p>
+    <div class="tags"><span>SQL</span><span>ETL</span><span>Power BI</span></div>
+    <a class="more" href="https://github.com/jiwon-ai/PROJET-POWER-BI-SDA6">Code →</a>
+  </div></article>
+</div>
+
+<h2>Background</h2>
+<div class="cols">
+  <div class="card"><div class="body">
+    <h3>Education &amp; certifications</h3>
+    <p><b>Sorbonne Data Analytics</b> (Master), Université Paris 1 Panthéon-Sorbonne · 2025–2026</p>
+    <p><b>Bachelor in International Management</b>, INSEEC, Paris · 2024</p>
+    <p><b>Dataiku ML Practitioner</b> · 2025 &nbsp;·&nbsp; <b>DALF C1</b> · 2022</p>
+  </div></div>
+  <div class="card"><div class="body">
+    <h3>Experience</h3>
+    <p><b>Founder</b>, Fiomio · 2026–present</p>
+    <p><b>Procurement &amp; Logistics Coordinator</b> (freelance), Korea Ski &amp; Snowboard Federation · 2025–present</p>
+    <p><b>Founder &amp; President</b>, Korean Ski Association of France · 2024–present</p>
+  </div></div>
+</div>
+
+<h2>Skills</h2>
+<div class="tags" style="gap:8px">
+  <span>SQL</span><span>Python (pandas, scikit-learn)</span><span>DuckDB</span><span>Power BI</span><span>Tableau</span><span>Excel / VBA</span><span>Google Analytics</span><span>Dataiku</span><span>Statistics</span><span>Data modelling</span><span>Git</span>
+</div>
+
+<footer>Jiwon Yi · Paris · <a href="mailto:jiwonyi.data@gmail.com" style="color:inherit">jiwonyi.data@gmail.com</a></footer>
+</div>
+</body>
+</html>
