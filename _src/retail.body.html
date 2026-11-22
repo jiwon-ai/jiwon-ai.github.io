@@ -1,0 +1,125 @@
+<header class="case-hero"><div class="wrap">
+  <p class="eyebrow"><span lang="fr">Étude de cas · Retail</span><span lang="en">Case study · Retail</span></p>
+  <h1 lang="fr">E-commerce : la croissance stagne. Où la retrouver ?</h1>
+  <h1 lang="en">E-commerce: growth has stalled. Where do we find it?</h1>
+  <p lang="fr">Un e-commerçant britannique de cadeaux (dont beaucoup de clients sont des grossistes) a réalisé le même chiffre d'affaires en 2011 qu'en 2010. J'ai modélisé deux ans de transactions en SQL pour comprendre pourquoi et proposer des leviers.</p>
+  <p lang="en">A UK online giftware retailer (many of its customers are wholesalers) made the same revenue in 2011 as in 2010. I modelled two years of transactions in SQL to understand why and recommend levers.</p>
+  <div class="meta">
+    <span><b lang="fr">Données</b><b lang="en">Data</b> · UCI Online Retail II, <span lang="fr">1 067 371 lignes</span><span lang="en">1,067,371 lines</span>, 12/2009–12/2011</span>
+    <span><b lang="fr">Outils</b><b lang="en">Tools</b> · SQL (DuckDB), Python, matplotlib, Chart.js</span>
+    <span><b lang="fr">Type</b><b lang="en">Type</b> · <span lang="fr">projet personnel</span><span lang="en">personal project</span></span>
+  </div>
+  <div class="btns"><a class="btn" href="https://github.com/jiwon-ai/retail-sales-analytics"><span lang="fr">Code et notebook</span><span lang="en">Code &amp; notebook</span></a><a class="btn" href="#dashboard"><span lang="fr">Ouvrir le tableau de bord</span><span lang="en">Open the dashboard</span></a></div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="kpis">
+    <div class="kpi"><b>+0,1 %</b><span lang="fr">CA janv.–nov. 2011 vs 2010</span><span lang="en">Jan–Nov revenue 2011 vs 2010</span></div>
+    <div class="kpi"><b>39–40 %</b><span lang="fr">du CA réalisé de septembre à novembre</span><span lang="en">of revenue made Sep–Nov</span></div>
+    <div class="kpi"><b>21 %</b><span lang="fr">des nouveaux clients rachètent le mois suivant</span><span lang="en">of new customers buy again next month</span></div>
+    <div class="kpi"><b>1 210</b><span lang="fr">clients « à risque » : 1,85 M£ de CA historique</span><span lang="en">"at-risk" customers: £1.85 M lifetime revenue</span></div>
+  </div>
+</div></section>
+
+<section id="dashboard"><div class="wrap">
+  <h2 class="title" lang="fr">Tableau de bord interactif</h2>
+  <h2 class="title" lang="en">Interactive dashboard</h2>
+  <p class="note" lang="fr">Calculé à partir du modèle SQL (clients identifiés uniquement). Choisissez un marché.</p>
+  <p class="note" lang="en">Computed from the SQL model (identified customers only). Pick a market.</p>
+  <div class="toolbar">
+    <label lang="fr">Marché</label><label lang="en">Market</label>
+    <div class="seg" id="market">
+      <button data-v="all" aria-pressed="true"><span lang="fr">Tous</span><span lang="en">All</span></button>
+      <button data-v="uk" aria-pressed="false"><span lang="fr">Royaume-Uni</span><span lang="en">UK</span></button>
+      <button data-v="nonuk" aria-pressed="false"><span lang="fr">Hors R.-U.</span><span lang="en">Outside UK</span></button>
+      <button data-v="fr" aria-pressed="false">France</button>
+      <button data-v="de" aria-pressed="false"><span lang="fr">Allemagne</span><span lang="en">Germany</span></button>
+      <button data-v="nl" aria-pressed="false"><span lang="fr">Pays-Bas</span><span lang="en">Netherlands</span></button>
+      <button data-v="ie" aria-pressed="false"><span lang="fr">Irlande</span><span lang="en">Ireland</span></button>
+    </div>
+  </div>
+  <div class="kpis" id="kpis"></div>
+
+  <div class="panel">
+    <h3 lang="fr">Évolution mensuelle</h3><h3 lang="en">Monthly trend</h3>
+    <div class="seg" id="metric">
+      <button data-v="rev" aria-pressed="true"><span lang="fr">Chiffre d'affaires</span><span lang="en">Revenue</span></button>
+      <button data-v="orders" aria-pressed="false"><span lang="fr">Commandes</span><span lang="en">Orders</span></button>
+      <button data-v="cust" aria-pressed="false"><span lang="fr">Clients actifs</span><span lang="en">Active customers</span></button>
+      <button data-v="aov" aria-pressed="false"><span lang="fr">Panier moyen</span><span lang="en">Avg. order value</span></button>
+    </div>
+    <div class="chart"><canvas id="trend"></canvas></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3 lang="fr">Segments RFM</h3><h3 lang="en">RFM segments</h3>
+      <p class="sub" lang="fr">Part des clients vs part du chiffre d'affaires</p><p class="sub" lang="en">Share of customers vs share of revenue</p>
+      <div class="chart"><canvas id="rfm"></canvas></div>
+    </div>
+    <div class="panel">
+      <h3 lang="fr">Top 10 produits</h3><h3 lang="en">Top 10 products</h3>
+      <p class="sub" lang="fr">Par chiffre d'affaires</p><p class="sub" lang="en">By revenue</p>
+      <div class="tablewrap"><table id="top"></table></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3 lang="fr">Rétention par cohorte</h3><h3 lang="en">Cohort retention</h3>
+    <p class="sub" lang="fr">% de chaque cohorte (mois du 1er achat) qui rachète N mois plus tard</p>
+    <p class="sub" lang="en">% of each cohort (first-purchase month) buying again N months later</p>
+    <div class="tablewrap" id="cohort"></div>
+  </div>
+</div></section>
+
+<section><div class="wrap prose">
+  <h2 lang="fr">Ce que les données disent</h2><h2 lang="en">What the data says</h2>
+  <ol lang="fr">
+    <li><b>La croissance est à l'arrêt</b> : +0,1 % de CA sur janvier–novembre 2011, commandes −2,8 %, clients stables. Le Royaume-Uni recule (−2,5 %) ; la croissance vient de l'international (+13,7 %), et la France passe de 43 à 83 clients (+41 % de CA).</li>
+    <li><b>Une saisonnalité forte</b> : septembre–novembre pèse 39–40 % du CA de janvier–novembre, les deux années.</li>
+    <li><b>La rétention est le levier</b> : environ 1 nouveau client sur 5 revient le mois suivant, et 18 % achètent encore 12 mois plus tard.</li>
+    <li><b>Un CA très concentré</b> : les « Champions » (27 % des clients) font 70 % du CA ; le top 20 % des clients, 77 %.</li>
+    <li><b>Les annulations</b> (3,6 % des ventes brutes) viennent surtout de quelques grosses commandes annulées en entier.</li>
+  </ol>
+  <ol lang="en">
+    <li><b>Growth has stopped</b>: revenue +0.1 % over Jan–Nov 2011, orders −2.8 %, customers flat. The UK declines (−2.5 %); growth comes from outside the UK (+13.7 %), and France goes from 43 to 83 customers (+41 % revenue).</li>
+    <li><b>Strong seasonality</b>: Sep–Nov is 39–40 % of Jan–Nov revenue, both years.</li>
+    <li><b>Retention is the lever</b>: about 1 in 5 new customers returns the next month; 18 % are still buying 12 months later.</li>
+    <li><b>Highly concentrated revenue</b>: "Champions" (27 % of customers) make 70 % of revenue; the top 20 % of customers, 77 %.</li>
+    <li><b>Cancellations</b> (3.6 % of gross sales) come mostly from a few large orders cancelled in full.</li>
+  </ol>
+
+  <h2 lang="fr">Recommandations</h2><h2 lang="en">Recommendations</h2>
+  <ul lang="fr">
+    <li><b>Préparer le pic d'automne dès août</b> : stock, équipe et campagnes.</li>
+    <li><b>Programme de deuxième commande</b> (e-mail d'onboarding, incitation au 1er rachat) : c'est le moyen le plus direct de croître avec une base clients stable.</li>
+    <li><b>Campagne de reconquête</b> des 1 210 clients « à risque », qui ont déjà prouvé leur valeur.</li>
+    <li><b>Suivi grands comptes</b> : quelques comptes de taille grossiste (Irlande, Pays-Bas) portent l'essentiel du CA hors R.-U.</li>
+    <li><b>Contrôle des commandes inhabituellement grosses</b> avant expédition.</li>
+  </ul>
+  <ul lang="en">
+    <li><b>Plan for the autumn peak by August</b>: stock, staffing and campaigns.</li>
+    <li><b>Second-order programme</b> (onboarding e-mail, first-repeat incentive): the most direct way to grow on a flat customer base.</li>
+    <li><b>Win-back campaign</b> for the 1,210 at-risk customers, who already proved their value.</li>
+    <li><b>Key-account follow-up</b>: a few wholesale-sized accounts (Ireland, Netherlands) carry most non-UK revenue.</li>
+    <li><b>Check unusually large orders</b> before fulfilment.</li>
+  </ul>
+
+  <h2 lang="fr">Méthode</h2><h2 lang="en">Method</h2>
+  <div class="flow"><span>raw (2 sheets)</span><i>→</i><span>raw_union</span><i>→</i><span>stg_invoice_lines</span><i>→</i><span>fct_sales · fct_orders · dim_customer</span><i>→</i><span>kpi · cohorts · rfm</span></div>
+  <ul lang="fr">
+    <li>Les deux onglets Excel se chevauchent du 1er au 9 décembre 2010 (1 088 factures) : comptés une seule fois.</li>
+    <li>Doublons exacts supprimés ; annulations, frais de port et ajustements isolés par des indicateurs.</li>
+    <li>Contrôles qualité à chaque build : unicité des clés, montants positifs, rapprochement du CA entre tables.</li>
+    <li>RFM par quintiles de distribution cumulée (les ex-aequo ont le même score, résultats reproductibles).</li>
+  </ul>
+  <ul lang="en">
+    <li>The two Excel sheets overlap from 1 to 9 December 2010 (1,088 invoices): counted once.</li>
+    <li>Exact duplicates removed; cancellations, postage and adjustments isolated with flags.</li>
+    <li>Data-quality checks on every build: key uniqueness, positive amounts, revenue reconciliation between tables.</li>
+    <li>RFM by cumulative-distribution quintiles (ties share a score, so results are reproducible).</li>
+  </ul>
+  <h2 lang="fr">Limites</h2><h2 lang="en">Limitations</h2>
+  <p class="note" lang="fr">23 % des lignes n'ont pas d'identifiant client et sont exclues. Le mélange B2B/B2C fausse les comparaisons par pays. Décembre 2011 est incomplet et exclu des tendances. Source : Chen, D. (2012), Online Retail II, UCI Machine Learning Repository, CC BY 4.0.</p>
+  <p class="note" lang="en">23 % of lines have no customer ID and are excluded. The B2B/B2C mix distorts country comparisons. December 2011 is incomplete and excluded from trends. Source: Chen, D. (2012), Online Retail II, UCI Machine Learning Repository, CC BY 4.0.</p>
+</div></section>

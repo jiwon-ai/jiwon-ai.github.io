@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mémoire : trading adaptatif — Jiwon Yi</title>
+<meta name="title-fr" content="Mémoire : trading adaptatif — Jiwon Yi">
+<meta name="title-en" content="Thesis: regime-adaptive trading — Jiwon Yi">
+<meta name="description" content="Mémoire Paris 1 : classification de régimes de marché et stratégie adaptative sur Nasdaq et or.">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js"></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html">Jiwon Yi</a>
+  <a class="link" href="index.html#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a>
+  <a class="link opt" href="index.html#parcours"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
+  <a class="link opt" href="mailto:jiwonyi.data@gmail.com">Contact</a>
+  <div class="langsw" role="group" aria-label="Language"><button data-lang="fr" aria-pressed="true">FR</button><button data-lang="en" aria-pressed="false">EN</button></div>
+</div></nav>
+<header class="case-hero"><div class="wrap">
+  <p class="eyebrow"><span lang="fr">Mémoire de master · Université Paris 1 · 2025–2026</span><span lang="en">Master's thesis · Université Paris 1 · 2025–2026</span></p>
+  <h1 lang="fr">Trading adaptatif selon le régime de marché : Nasdaq et or, 2022–2025</h1>
+  <h1 lang="en">Regime-adaptive trading on Nasdaq and gold futures, 2022–2025</h1>
+  <p lang="fr">Une même stratégie ne fonctionne pas dans tous les marchés. J'ai construit un classifieur de régimes (volatilité, calendrier macro, sentiment) qui choisit entre retour à la moyenne et cassure, puis testé cinq hypothèses de recherche par backtest et bootstrap.</p>
+  <p lang="en">No single strategy works in every market. I built a regime classifier (volatility, macro calendar, sentiment) that switches between mean reversion and breakout, then tested five research hypotheses with backtests and bootstrap.</p>
+  <div class="meta">
+    <span><b lang="fr">Données</b><b lang="en">Data</b> · Yahoo Finance : NQ, GC, VIX (<span lang="fr">quotidien</span><span lang="en">daily</span>), <span lang="fr">dates FOMC, CPI, NFP</span><span lang="en">FOMC, CPI, NFP dates</span></span>
+    <span><b lang="fr">Outils</b><b lang="en">Tools</b> · Python, pandas, NumPy, matplotlib</span>
+  </div>
+  <div class="btns"><a class="btn" href="https://github.com/jiwon-ai/Paris1_nasdaqandgold"><span lang="fr">Code</span><span lang="en">Code</span></a></div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="kpis">
+    <div class="kpi"><b><span lang="fr">−4,5 %</span><span lang="en">−4.5 %</span></b><span lang="fr">perte maximale de la stratégie dynamique (vs −34,9 % Nasdaq, −20,4 % or)</span><span lang="en">max drawdown of the dynamic strategy (vs −34.9 % Nasdaq, −20.4 % gold)</span></div>
+    <div class="kpi"><b><span lang="fr">1,11</span><span lang="en">1.11</span></b><span lang="fr">ratio de Sharpe de la stratégie dynamique</span><span lang="en">Sharpe ratio of the dynamic strategy</span></div>
+    <div class="kpi"><b><span lang="fr">[0,19 ; 1,98]</span><span lang="en">[0.19, 1.98]</span></b><span lang="fr">IC bootstrap à 95 % du Sharpe : exclut zéro</span><span lang="en">95 % bootstrap CI of the Sharpe: excludes zero</span></div>
+    <div class="kpi"><b>6</b><span lang="fr">régimes de marché détectés chaque jour</span><span lang="en">market regimes detected every day</span></div>
+  </div>
+
+  <div class="panel">
+    <h3 lang="fr">Valeur d'un portefeuille de 100 000 $</h3><h3 lang="en">Value of a $100,000 portfolio</h3>
+    <p class="sub" lang="fr">Stratégie dynamique NQ/GC vs achat-conservation (données hebdomadaires issues du dépôt)</p>
+    <p class="sub" lang="en">Dynamic NQ/GC strategy vs buy-and-hold (weekly points from the repository results)</p>
+    <div class="seg" id="scale"><button data-v="linear" aria-pressed="true"><span lang="fr">Échelle linéaire</span><span lang="en">Linear scale</span></button><button data-v="dd" aria-pressed="false"><span lang="fr">Pertes depuis le plus haut</span><span lang="en">Drawdown</span></button></div>
+    <div class="chart"><canvas id="eq"></canvas></div>
+  </div>
+</div></section>
+
+<section><div class="wrap prose">
+  <h2 lang="fr">Résultats (2022–2025)</h2><h2 lang="en">Results (2022–2025)</h2>
+  <div class="tablewrap"><table>
+    <tr><th lang="fr">Stratégie</th><th lang="en">Strategy</th><th class="n" lang="fr">Rendement total</th><th class="n" lang="en">Total return</th><th class="n">Sharpe</th><th class="n" lang="fr">Perte max.</th><th class="n" lang="en">Max drawdown</th></tr>
+    <tr><td lang="fr">Nasdaq, achat-conservation</td><td lang="en">Nasdaq buy-and-hold</td><td class="n"><span lang="fr">+55,7 %</span><span lang="en">+55.7 %</span></td><td class="n"><span lang="fr">0,58</span><span lang="en">0.58</span></td><td class="n"><span lang="fr">−34,9 %</span><span lang="en">−34.9 %</span></td></tr>
+    <tr><td lang="fr">Or, achat-conservation</td><td lang="en">Gold buy-and-hold</td><td class="n"><span lang="fr">+142,9 %</span><span lang="en">+142.9 %</span></td><td class="n"><span lang="fr">1,45</span><span lang="en">1.45</span></td><td class="n"><span lang="fr">−20,4 %</span><span lang="en">−20.4 %</span></td></tr>
+    <tr><td lang="fr">Stratégie Nasdaq (hors échantillon)</td><td lang="en">Nasdaq strategy (out-of-sample)</td><td class="n"><span lang="fr">−2,0 %</span><span lang="en">−2.0 %</span></td><td class="n"><span lang="fr">−0,12</span><span lang="en">−0.12</span></td><td class="n"><span lang="fr">−10,3 %</span><span lang="en">−10.3 %</span></td></tr>
+    <tr><td lang="fr">Stratégie or (hors échantillon)</td><td lang="en">Gold strategy (out-of-sample)</td><td class="n"><span lang="fr">+9,6 %</span><span lang="en">+9.6 %</span></td><td class="n"><span lang="fr">0,61</span><span lang="en">0.61</span></td><td class="n"><span lang="fr">−6,7 %</span><span lang="en">−6.7 %</span></td></tr>
+    <tr><td><b lang="fr">Dynamique NQ/GC</b><b lang="en">Dynamic NQ/GC</b></td><td class="n"><b><span lang="fr">+20,4 %</span><span lang="en">+20.4 %</span></b></td><td class="n"><b><span lang="fr">1,11</span><span lang="en">1.11</span></b></td><td class="n"><b><span lang="fr">−4,5 %</span><span lang="en">−4.5 %</span></b></td></tr>
+  </table></div>
+  <p lang="fr"><b>Lecture honnête :</b> la stratégie dynamique ne bat pas l'achat-conservation en rendement, et l'or seul a un meilleur Sharpe (1,45) sur une période de forte hausse de l'or. Son apport est le <b>contrôle du risque</b> : une perte maximale de −4,5 % contre −20 à −35 %, avec un Sharpe supérieur au Nasdaq.</p>
+  <p lang="en"><b>Honest reading:</b> the dynamic strategy does not beat buy-and-hold on return, and gold alone has a higher Sharpe (1.45) over a period of strong gold gains. Its contribution is <b>risk control</b>: a −4.5 % maximum drawdown against −20 % to −35 %, with a Sharpe above the Nasdaq's.</p>
+
+  <h2 lang="fr">Hypothèses testées</h2><h2 lang="en">Hypotheses tested</h2>
+  <ol lang="fr">
+    <li>La stratégie adaptative bat l'achat-conservation en rendement ajusté du risque.</li>
+    <li>La performance varie fortement selon le régime de marché.</li>
+    <li>Le proxy de sentiment améliore la classification des régimes.</li>
+    <li>Exclure les fenêtres d'annonces macro réduit la perte maximale.</li>
+    <li>La sélection dynamique NQ/GC bat chaque actif pris séparément.</li>
+  </ol>
+  <ol lang="en">
+    <li>The adaptive strategy beats buy-and-hold on a risk-adjusted basis.</li>
+    <li>Performance varies significantly across market regimes.</li>
+    <li>The sentiment proxy improves regime classification.</li>
+    <li>Excluding macro event windows reduces maximum drawdown.</li>
+    <li>Dynamic NQ/GC selection beats each asset's strategy on its own.</li>
+  </ol>
+
+  <h2 lang="fr">Les six régimes</h2><h2 lang="en">The six regimes</h2>
+  <div class="tablewrap"><table>
+    <tr><th lang="fr">Régime</th><th lang="en">Regime</th><th lang="fr">Règle</th><th lang="en">Rule</th><th lang="fr">Action</th><th lang="en">Action</th><th class="n">Sharpe NQ</th><th class="n">Sharpe GC</th></tr>
+    <tr><td>Event</td><td lang="fr">fenêtre FOMC / CPI / NFP</td><td lang="en">FOMC / CPI / NFP window</td><td lang="fr">pas de trading</td><td lang="en">suspended</td><td class="n">–</td><td class="n">–</td></tr>
+    <tr><td>Crisis</td><td>VIX ≥ 30</td><td lang="fr">aucune position</td><td lang="en">no positions</td><td class="n">–</td><td class="n">–</td></tr>
+    <tr><td>Elevated</td><td>20 ≤ VIX &lt; 30</td><td lang="fr">cassure + or</td><td lang="en">breakout + gold</td><td class="n"><span lang="fr">1,49</span><span lang="en">1.49</span></td><td class="n"><span lang="fr">2,61</span><span lang="en">2.61</span></td></tr>
+    <tr><td>Quiet_Bullish</td><td lang="fr">sentiment positif</td><td lang="en">positive sentiment</td><td lang="fr">cassure + Nasdaq</td><td lang="en">breakout + Nasdaq</td><td class="n"><span lang="fr">3,28</span><span lang="en">3.28</span></td><td class="n"><span lang="fr">3,28</span><span lang="en">3.28</span></td></tr>
+    <tr><td>Quiet_Bearish</td><td lang="fr">sentiment négatif</td><td lang="en">negative sentiment</td><td lang="fr">retour à la moyenne strict + or</td><td lang="en">strict mean reversion + gold</td><td class="n"><span lang="fr">−2,37</span><span lang="en">−2.37</span></td><td class="n"><span lang="fr">−1,91</span><span lang="en">−1.91</span></td></tr>
+    <tr><td>Quiet</td><td lang="fr">neutre</td><td lang="en">neutral</td><td lang="fr">retour à la moyenne</td><td lang="en">standard mean reversion</td><td class="n"><span lang="fr">−1,30</span><span lang="en">−1.30</span></td><td class="n"><span lang="fr">−1,23</span><span lang="en">−1.23</span></td></tr>
+  </table></div>
+  <p class="note" lang="fr">Sharpe par régime issus du README du dépôt (H2). Signaux : bandes de Bollinger + RSI.</p>
+  <p class="note" lang="en">Sharpe by regime from the repository README (H2). Signals: Bollinger bands + RSI.</p>
+
+  <div class="grid2" style="margin-top:22px">
+    <figure><img src="assets/thesis_regimes.jpg" alt="Performance by regime" loading="lazy"><figcaption lang="fr">Performance par régime</figcaption><figcaption lang="en">Performance by regime</figcaption></figure>
+    <figure><img src="assets/thesis_bootstrap.jpg" alt="Bootstrap distribution" loading="lazy"><figcaption lang="fr">Distribution bootstrap du Sharpe</figcaption><figcaption lang="en">Bootstrap distribution of the Sharpe ratio</figcaption></figure>
+  </div>
+  <h2 lang="fr">Pourquoi 2022–2025</h2><h2 lang="en">Why 2022–2025</h2>
+  <p lang="fr">Cycle de resserrement de la Fed (+500 pb), pic de l'inflation américaine (9,1 %), crise SVB puis normalisation : une grande diversité de régimes pour tester la méthode.</p>
+  <p lang="en">Fed tightening cycle (+500 bp), US CPI peak (9.1 %), the SVB crisis and normalisation: a wide variety of regimes to test the method.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Jiwon Yi · Paris</span>
+  <a href="mailto:jiwonyi.data@gmail.com">jiwonyi.data@gmail.com</a>
+  <a href="https://www.linkedin.com/in/jiwonyi/">LinkedIn</a>
+  <a href="https://github.com/jiwon-ai">GitHub</a>
+  <a href="https://fiomio.io">fiomio.io</a>
+</div></footer>
+<script src="assets/chart.umd.js"></script><script src="assets/thesis.js"></script>
+</body>
+</html>

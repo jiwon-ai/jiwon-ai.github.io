@@ -1,0 +1,84 @@
+<header class="case-hero"><div class="wrap">
+  <p class="eyebrow"><span lang="fr">Étude de cas · Beauté</span><span lang="en">Case study · Beauty</span></p>
+  <h1 lang="fr">K-beauty vs rayon européen : ce qu'il y a vraiment dans le flacon</h1>
+  <h1 lang="en">K-beauty vs the European shelf: what is really in the bottle</h1>
+  <p lang="fr">Les marques coréennes accélèrent en Europe. Leurs formules sont-elles vraiment différentes des soins déjà en rayon, et où sont les opportunités en France ? J'ai comparé les listes d'ingrédients (INCI) de 2 608 soins visage.</p>
+  <p lang="en">Korean brands are accelerating in Europe. Are their formulas really different from what is already on the shelf, and where are the opportunities in France? I compared the ingredient (INCI) lists of 2,608 face-care products.</p>
+  <div class="meta">
+    <span><b lang="fr">Données</b><b lang="en">Data</b> · Open Beauty Facts (ODbL), <span lang="fr">export du 22/11/2026</span><span lang="en">export of 2026-11-22</span></span>
+    <span><b lang="fr">Outils</b><b lang="en">Tools</b> · Python, pandas, SciPy, statsmodels, Chart.js</span>
+    <span><b lang="fr">Type</b><b lang="en">Type</b> · <span lang="fr">projet personnel, lié à Fiomio</span><span lang="en">personal project, linked to Fiomio</span></span>
+  </div>
+  <div class="btns"><a class="btn" href="https://github.com/jiwon-ai/kbeauty-ingredients-analysis"><span lang="fr">Code et notebook</span><span lang="en">Code &amp; notebook</span></a><a class="btn" href="#explorer"><span lang="fr">Explorer les ingrédients</span><span lang="en">Explore ingredients</span></a></div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="kpis">
+    <div class="kpi"><b>29 % vs 58 %</b><span lang="fr">formules parfumées : coréennes vs autres</span><span lang="en">fragranced formulas: Korean vs other</span></div>
+    <div class="kpi"><b>84 % vs 10 %</b><span lang="fr">1,2-hexanediol : l'alternative coréenne au phénoxyéthanol</span><span lang="en">1,2-hexanediol: the Korean alternative to phenoxyethanol</span></div>
+    <div class="kpi"><b>3–4 %</b><span lang="fr">des soins vendus en France contiennent de la centella, de la niacinamide ou des céramides (chacun)</span><span lang="en">of face care sold in France contains centella, niacinamide or ceramides (each)</span></div>
+    <div class="kpi"><b>37 vs 21</b><span lang="fr">ingrédients par formule (médiane)</span><span lang="en">ingredients per formula (median)</span></div>
+  </div>
+</div></section>
+
+<section id="explorer"><div class="wrap">
+  <h2 class="title" lang="fr">Explorer les ingrédients</h2>
+  <h2 class="title" lang="en">Explore the ingredients</h2>
+  <div class="panel">
+    <div class="toolbar">
+      <label lang="fr">Famille</label><label lang="en">Family</label>
+      <div class="seg" id="family">
+        <button data-v="sig" aria-pressed="true"><span lang="fr">Différences significatives</span><span lang="en">Significant differences</span></button>
+        <button data-v="hero" aria-pressed="false"><span lang="fr">Actifs K-beauty</span><span lang="en">K-beauty actives</span></button>
+        <button data-v="classic" aria-pressed="false"><span lang="fr">Actifs classiques</span><span lang="en">Classic actives</span></button>
+        <button data-v="form" aria-pressed="false"><span lang="fr">Choix de formulation</span><span lang="en">Formulation choices</span></button>
+      </div>
+    </div>
+    <div class="toolbar">
+      <label lang="fr">Comparer à</label><label lang="en">Compare with</label>
+      <div class="seg" id="base">
+        <button data-v="o" aria-pressed="true"><span lang="fr">Autres marques (toutes)</span><span lang="en">Other brands (all)</span></button>
+        <button data-v="f" aria-pressed="false"><span lang="fr">Autres marques vendues en France</span><span lang="en">Other brands sold in France</span></button>
+      </div>
+    </div>
+    <div class="chart tall"><canvas id="ing"></canvas></div>
+    <p class="note" id="nnote"></p>
+  </div>
+  <div class="panel">
+    <h3 lang="fr">Tableau complet</h3><h3 lang="en">Full table</h3>
+    <p class="sub" lang="fr">Test exact de Fisher par ingrédient, correction de Benjamini-Hochberg sur 27 tests.</p>
+    <p class="sub" lang="en">Fisher exact test per ingredient, Benjamini-Hochberg correction across 27 tests.</p>
+    <div class="tablewrap"><table id="tbl"></table></div>
+  </div>
+</div></section>
+
+<section><div class="wrap prose">
+  <h2 lang="fr">Ce que les données disent</h2><h2 lang="en">What the data says</h2>
+  <ul lang="fr">
+    <li><b>Deux philosophies de formulation.</b> Les produits coréens sont deux fois moins souvent parfumés, remplacent le phénoxyéthanol par le 1,2-hexanediol et superposent davantage d'actifs apaisants et barrière (centella, panthénol, allantoïne, céramides) dans des formules plus longues.</li>
+    <li><b>Un espace libre en France.</b> Parmi les 639 soins visage non coréens vendus en France, centella, niacinamide, adénosine et céramides apparaissent chacun dans 3 à 4 % des produits, tandis que 67 % sont parfumés.</li>
+    <li><b>Pour une marque ou un distributeur</b> : un positionnement « sans parfum, réparateur de barrière » construit sur ces actifs reste rare dans le rayon français tel que le montre cette base.</li>
+  </ul>
+  <ul lang="en">
+    <li><b>Two formulation philosophies.</b> Korean products are half as likely to be fragranced, replace phenoxyethanol with 1,2-hexanediol and layer more soothing and barrier actives (centella, panthenol, allantoin, ceramides) into longer formulas.</li>
+    <li><b>White space in France.</b> Among the 639 non-Korean face-care products sold in France, centella, niacinamide, adenosine and ceramides each appear in 3–4 % of products, while 67 % are fragranced.</li>
+    <li><b>For a brand or retailer</b>: a "fragrance-free, barrier-repair" positioning built on these actives is still rare on the French shelf, as far as this database shows.</li>
+  </ul>
+  <h2 lang="fr">Méthode</h2><h2 lang="en">Method</h2>
+  <div class="flow"><span><span lang="fr">80 989 produits</span><span lang="en">80,989 products</span></span><i>→</i><span><span lang="fr">23 224 avec INCI</span><span lang="en">23,224 with INCI</span></span><i>→</i><span><span lang="fr">2 608 soins visage</span><span lang="en">2,608 face care</span></span><i>→</i><span>55 <span lang="fr">marques coréennes</span><span lang="en">Korean brands</span></span></div>
+  <ul lang="fr">
+    <li>Filtre « soin visage » par mots-clés en 4 langues, avec exclusions (cheveux, corps, solaire, maquillage, lèvres, savon…).</li>
+    <li>Marques coréennes : liste de 51 marques construite à la main ; les 83 produits concernés ont été vérifiés un par un.</li>
+    <li>27 familles d'ingrédients détectées par expressions régulières sur la liste INCI.</li>
+    <li><b>Audit qualité</b> : sur 100 produits tirés au hasard, environ 88 sont bien des soins visage ; le reste est du bruit typique d'une base participative (une pastille lave-vaisselle classée « nettoyant visage »…).</li>
+  </ul>
+  <ul lang="en">
+    <li>"Face care" filter with keywords in 4 languages and exclusions (hair, body, sun, make-up, lip, soap…).</li>
+    <li>Korean brands: a hand-made list of 51 brands; the 83 matching products were checked one by one.</li>
+    <li>27 ingredient families detected with regular expressions on the INCI list.</li>
+    <li><b>Quality audit</b>: of 100 random products, about 88 are genuine face care; the rest is noise typical of crowdsourced data (a dishwasher tablet tagged "face cleanser"…).</li>
+  </ul>
+  <h2 lang="fr">Limites</h2><h2 lang="en">Limitations</h2>
+  <p class="note" lang="fr">Petit échantillon coréen (n = 55) : intervalles larges, résultats indicatifs. La base contient les produits que les utilisateurs ont ajoutés : les parts décrivent la base, pas les parts de marché. Présence seulement, pas la concentration. Contient des données d'Open Beauty Facts, disponibles sous licence ODbL.</p>
+  <p class="note" lang="en">Small Korean sample (n = 55): wide intervals, directional results. The database holds the products users added: shares describe the database, not market share. Presence only, not concentration. Contains data from Open Beauty Facts, available under the ODbL.</p>
+</div></section>
