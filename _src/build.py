@@ -71,7 +71,11 @@ def localise_numbers(html):
     html = re.sub(r'(<td class="n"[^>]*>)(.*?)(</td>)', rep, html)
     html = re.sub(r'(<b>)([^<]*\d[^<]*)(</b>)', rep, html)
     return html
+import time
+VER = time.strftime("%Y%m%d%H%M")
 for name, (tf, te, d, s) in PAGES.items():
     body = localise_numbers((SRC / name.replace(".html", ".body.html")).read_text())
-    (OUT / name).write_text(page(body, tf, te, d, s))
+    html = page(body, tf, te, d, s)
+    html = re.sub(r'(assets/[\w.]+\.(?:css|js))"', lambda m: f'{m.group(1)}?v={VER}"', html)
+    (OUT / name).write_text(html)
     print("built", name)
