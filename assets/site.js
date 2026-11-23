@@ -44,7 +44,7 @@ function segInit(el, onChange) {
 
 function chartDefaults() {
   if (!window.Chart) return;
-  Chart.defaults.font.family = "IBM Plex Sans, -apple-system, Segoe UI, Roboto, sans-serif";
+  Chart.defaults.font.family = "Geist, -apple-system, Segoe UI, Roboto, sans-serif";
   Chart.defaults.color = JY.css("--muted");
   Chart.defaults.borderColor = JY.css("--line");
   Chart.defaults.plugins.legend.labels.boxWidth = 12;
