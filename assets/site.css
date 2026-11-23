@@ -203,3 +203,14 @@ footer a{color:var(--muted)}
 .aiflow p{margin:0;color:var(--muted);font-size:.88rem}
 @media (max-width:820px){.aiflow{grid-template-columns:1fr 1fr}.aiflow div:nth-child(3){border-left:0}.aiflow div:nth-child(n+3){border-top:1px solid var(--line)}}
 @media (max-width:480px){.aiflow{grid-template-columns:1fr}.aiflow div+div{border-left:0;border-top:1px solid var(--line)}}
+
+/* WINREF screenshots */
+.shot{margin:0 0 22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.shot img,.phones img,.case .viz img{display:block;width:100%;height:auto}
+.shot figcaption{padding:12px 18px;font-size:.86rem;color:var(--muted);border-top:1px solid var(--line)}
+.phones{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.phones figure{margin:0}
+.phones img{border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.phones figcaption{text-align:center;font-size:.84rem;color:var(--muted);margin-top:8px}
+@media (max-width:760px){.phones{grid-template-columns:1fr 1fr}}
+.case .viz img{border:1px solid var(--line);border-radius:12px;margin-top:6px}

@@ -1,0 +1,80 @@
+<header class="case-hero"><div class="wrap">
+  <a class="back" href="index.html#etudes"><span lang="fr">← Tous les projets</span><span lang="en">← All projects</span></a>
+  <p class="eyebrow"><span lang="fr">Mission client · Freelance rémunérée</span><span lang="en">Client project · Paid freelance</span></p>
+  <h1 lang="fr">WINREF : l'application qui gère les officiels de ski alpin</h1>
+  <h1 lang="en">WINREF: the app that runs alpine-ski race officials</h1>
+  <p lang="fr">WINREF Academy forme et place des officiels de course (juges de porte, juges de départ…) pour les compétitions de ski alpin en Corée. Les inscriptions, les sélections et le suivi des qualifications se faisaient à la main. J'ai livré une application Android et une console d'administration web, avec la base de données, les droits d'accès, les notifications automatiques et les rapports d'activité.</p>
+  <p lang="en">WINREF Academy trains and assigns race officials (gate judges, start judges…) for alpine-ski competitions in Korea. Applications, selections and qualification tracking were handled by hand. I delivered an Android app and a web admin console, with the database, access rights, automatic notifications and activity reports.</p>
+  <div class="meta">
+    <span><b lang="fr">Client</b><b lang="en">Client</b> · WINREF Academy</span>
+    <span><b lang="fr">Stack</b><b lang="en">Stack</b> · Flutter (Android + web), Supabase (PostgreSQL), TypeScript, GitHub Actions</span>
+    <span><b lang="fr">Statut</b><b lang="en">Status</b> · <span lang="fr">console web en ligne, publication Google Play à venir</span><span lang="en">web console live, Google Play release upcoming</span></span>
+  </div>
+  <div class="btns"><a class="btn" href="https://admin.winref.co.kr/"><span lang="fr">Console web (accès réservé)</span><span lang="en">Web console (restricted access)</span></a></div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="kpis">
+    <div class="kpi"><b>3</b><span lang="fr">profils d'utilisateurs : officiels, organisateurs, administrateurs</span><span lang="en">user roles: officials, organisers, administrators</span></div>
+    <div class="kpi"><b>21</b><span lang="fr">migrations SQL versionnées (schéma, droits, statistiques)</span><span lang="en">versioned SQL migrations (schema, rights, statistics)</span></div>
+    <div class="kpi"><b>125</b><span lang="fr">commits en 10 jours, développé avec un assistant IA</span><span lang="en">commits in 10 days, built with an AI assistant</span></div>
+    <div class="kpi"><b>2</b><span lang="fr">plateformes depuis un seul code : Android et web</span><span lang="en">platforms from one codebase: Android and web</span></div>
+  </div>
+</div></section>
+
+<section class="tight"><div class="wrap">
+  <h2 class="title" lang="fr">Ce que j'ai livré</h2>
+  <h2 class="title" lang="en">What I delivered</h2>
+  <div class="grid3">
+    <div class="card"><h3 lang="fr">Pour les officiels</h3><h3 lang="en">For officials</h3>
+      <p lang="fr">Recherche de compétitions et calendrier, candidature en un clic, inscription aux formations, dépôt des qualifications, historique d'activité exportable en PDF, carte d'officiel numérique.</p>
+      <p lang="en">Competition search and calendar, one-tap application, training sign-up, qualification upload, activity history exported to PDF, digital official card.</p></div>
+    <div class="card"><h3 lang="fr">Pour les organisateurs</h3><h3 lang="en">For organisers</h3>
+      <p lang="fr">Création de compétitions et d'annonces par poste, sélection groupée des candidats avec alerte de conflit de dates, export Excel, pointage par QR code, évaluation après la course.</p>
+      <p lang="en">Competition and per-role recruitment posts, bulk candidate selection with date-clash warnings, Excel export, QR-code check-in, post-race evaluation.</p></div>
+    <div class="card"><h3 lang="fr">Pour l'administration</h3><h3 lang="en">For administrators</h3>
+      <p lang="fr">Tableau de bord d'indicateurs, rapport d'activité par période (PDF et Excel) pour les bilans de subventions, validation des qualifications et des organismes, journal d'audit.</p>
+      <p lang="en">KPI dashboard, activity report by period (PDF and Excel) for grant reporting, qualification and organisation approval, audit log.</p></div>
+  </div>
+</div></section>
+
+<section class="tight"><div class="wrap">
+  <h2 class="title" lang="fr">La partie data : indicateurs et rapports en SQL</h2>
+  <h2 class="title" lang="en">The data side: KPIs and reports in SQL</h2>
+  <p class="intro" lang="fr">Les indicateurs sont calculés directement dans PostgreSQL : membres par profil, inscrits par formation, candidats et sélectionnés par compétition, qualifications qui expirent dans 90 jours, inscriptions mensuelles. Le rapport par période agrège l'activité (sélections, présences, certificats) pour que le client puisse rendre compte à ses financeurs sans retraiter les données à la main.</p>
+  <p class="intro" lang="en">KPIs are computed directly in PostgreSQL: members by role, sign-ups per course, applicants and selected officials per competition, qualifications expiring within 90 days, monthly sign-ups. The period report aggregates activity (selections, attendance, certificates) so the client can report to funders without reworking data by hand.</p>
+  <figure class="shot"><img src="assets/winref/admin-dashboard.webp" width="1600" height="1000" loading="lazy" alt="WINREF admin dashboard">
+    <figcaption lang="fr">Console d'administration : actions à traiter, indicateurs, inscriptions mensuelles, remplissage des formations et des compétitions. Données de test.</figcaption>
+    <figcaption lang="en">Admin console: pending actions, KPIs, monthly sign-ups, course and competition fill rates. Test data.</figcaption></figure>
+  <figure class="shot"><img src="assets/winref/admin-report.webp" width="1600" height="1000" loading="lazy" alt="WINREF period report">
+    <figcaption lang="fr">Rapport d'activité par période, exportable en PDF et Excel. Données de test.</figcaption>
+    <figcaption lang="en">Activity report by period, exportable to PDF and Excel. Test data.</figcaption></figure>
+</div></section>
+
+<section class="tight"><div class="wrap">
+  <h2 class="title" lang="fr">L'application mobile</h2>
+  <h2 class="title" lang="en">The mobile app</h2>
+  <div class="phones">
+    <figure><img src="assets/winref/m-competitions.webp" width="540" height="960" loading="lazy" alt=""><figcaption lang="fr">Compétitions</figcaption><figcaption lang="en">Competitions</figcaption></figure>
+    <figure><img src="assets/winref/m-bulk-select.webp" width="540" height="960" loading="lazy" alt=""><figcaption lang="fr">Sélection groupée</figcaption><figcaption lang="en">Bulk selection</figcaption></figure>
+    <figure><img src="assets/winref/m-referee.webp" width="540" height="960" loading="lazy" alt=""><figcaption lang="fr">Accueil officiel</figcaption><figcaption lang="en">Official's home</figcaption></figure>
+    <figure><img src="assets/winref/m-career.webp" width="540" height="960" loading="lazy" alt=""><figcaption lang="fr">Profil et statistiques</figcaption><figcaption lang="en">Profile and stats</figcaption></figure>
+  </div>
+  <p class="note" lang="fr">Interface en coréen pour les utilisateurs du client. Captures issues des tests automatisés, données fictives.</p>
+  <p class="note" lang="en">Korean interface for the client's users. Screenshots from the automated tests, fictitious data.</p>
+</div></section>
+
+<section class="tight"><div class="wrap">
+  <h2 class="title" lang="fr">Comment je l'ai construit</h2>
+  <h2 class="title" lang="en">How I built it</h2>
+  <div class="grid2">
+    <div class="card"><h3 lang="fr">Avec l'IA, sous contrôle</h3><h3 lang="en">With AI, under control</h3>
+      <p lang="fr">Le code a été écrit avec Claude (assistant IA), à partir du cahier des charges du client. Mon rôle : découper le besoin, décider du modèle de données et des règles d'accès, relire, tester et livrer.</p>
+      <p lang="en">The code was written with Claude (an AI assistant) from the client's specification. My role: break down the need, decide the data model and access rules, review, test and deliver.</p></div>
+    <div class="card"><h3 lang="fr">Des garde-fous automatiques</h3><h3 lang="en">Automatic guardrails</h3>
+      <p lang="fr">Droits d'accès au niveau des lignes (RLS) testés automatiquement, scénarios de bout en bout dans un vrai navigateur sur une base locale, builds Android et web à chaque mise à jour du code.</p>
+      <p lang="en">Row-level access rights (RLS) tested automatically, end-to-end scenarios in a real browser against a local database, Android and web builds on every code push.</p></div>
+  </div>
+  <p class="note" lang="fr">Hors périmètre (cahier des charges) : vidéo, messagerie instantanée, paiement. Les notifications KakaoTalk sont prévues en phase 2.</p>
+  <p class="note" lang="en">Out of scope (per specification): video, instant messaging, payments. KakaoTalk notifications are planned for phase 2.</p>
+</div></section>
