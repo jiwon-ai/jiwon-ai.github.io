@@ -7,18 +7,22 @@
 <meta name="title-fr" content="Mémoire : trading adaptatif — Jiwon Yi">
 <meta name="title-en" content="Thesis: regime-adaptive trading — Jiwon Yi">
 <meta name="description" content="Mémoire Paris 1 : classification de régimes de marché et stratégie adaptative sur Nasdaq et or.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/site.js"></script>
 </head>
 <body>
 <nav class="nav"><div class="wrap">
-  <a class="brand" href="index.html">Jiwon Yi</a>
+  <a class="brand" href="index.html"><span class="mono">JY</span>Jiwon Yi</a>
   <a class="link" href="index.html#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a>
+  <a class="link opt" href="index.html#competences"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
   <a class="link opt" href="index.html#parcours"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
   <a class="link opt" href="mailto:jiwonyi.data@gmail.com">Contact</a>
   <div class="langsw" role="group" aria-label="Language"><button data-lang="fr" aria-pressed="true">FR</button><button data-lang="en" aria-pressed="false">EN</button></div>
 </div></nav>
 <header class="case-hero"><div class="wrap">
+  <a class="back" href="index.html#etudes"><span lang="fr">← Toutes les études de cas</span><span lang="en">← All case studies</span></a>
   <p class="eyebrow"><span lang="fr">Mémoire de master · Université Paris 1 · 2025–2026</span><span lang="en">Master's thesis · Université Paris 1 · 2025–2026</span></p>
   <h1 lang="fr">Trading adaptatif selon le régime de marché : Nasdaq et or, 2022–2025</h1>
   <h1 lang="en">Regime-adaptive trading on Nasdaq and gold futures, 2022–2025</h1>
@@ -90,13 +94,16 @@
   <p class="note" lang="fr">Sharpe par régime issus du README du dépôt (H2). Signaux : bandes de Bollinger + RSI.</p>
   <p class="note" lang="en">Sharpe by regime from the repository README (H2). Signals: Bollinger bands + RSI.</p>
 
-  <div class="grid2" style="margin-top:22px">
-    <figure><img src="assets/thesis_regimes.jpg" alt="Performance by regime" loading="lazy"><figcaption lang="fr">Performance par régime</figcaption><figcaption lang="en">Performance by regime</figcaption></figure>
-    <figure><img src="assets/thesis_bootstrap.jpg" alt="Bootstrap distribution" loading="lazy"><figcaption lang="fr">Distribution bootstrap du Sharpe</figcaption><figcaption lang="en">Bootstrap distribution of the Sharpe ratio</figcaption></figure>
+  <div class="panel" style="margin-top:22px">
+    <h3 lang="fr">Ratio de Sharpe par régime (H2)</h3><h3 lang="en">Sharpe ratio by regime (H2)</h3>
+    <p class="sub" lang="fr">La même logique gagne nettement en régime haussier calme et perd en régime calme ou baissier : d'où l'intérêt d'adapter la stratégie.</p>
+    <p class="sub" lang="en">The same logic wins clearly in calm bullish markets and loses in calm or bearish ones, which is why the strategy adapts.</p>
+    <div class="chart short"><canvas id="regimes"></canvas></div>
   </div>
   <h2 lang="fr">Pourquoi 2022–2025</h2><h2 lang="en">Why 2022–2025</h2>
   <p lang="fr">Cycle de resserrement de la Fed (+500 pb), pic de l'inflation américaine (9,1 %), crise SVB puis normalisation : une grande diversité de régimes pour tester la méthode.</p>
   <p lang="en">Fed tightening cycle (+500 bp), US CPI peak (9.1 %), the SVB crisis and normalisation: a wide variety of regimes to test the method.</p>
+  <div class="next"><a href="index.html#etudes"><span lang="fr">← Toutes les études</span><span lang="en">← All studies</span></a><a href="retail.html"><span lang="fr">Étude suivante : Retail →</span><span lang="en">Next study: Retail →</span></a></div>
 </div></section>
 
 <footer><div class="wrap">

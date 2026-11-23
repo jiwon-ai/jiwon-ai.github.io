@@ -34,7 +34,7 @@
     var cfg = {
       type: "bar",
       data: { labels: r.map(function (x) { return name(x.ing); }), datasets: [
-        { label: JY.t("Marques coréennes (n = " + D.n.k + ")", "Korean brands (n = " + D.n.k + ")"), data: r.map(function (x) { return x.k * 100; }), backgroundColor: JY.css("--warm") },
+        { label: JY.t("Marques coréennes (n = " + D.n.k + ")", "Korean brands (n = " + D.n.k + ")"), data: r.map(function (x) { return x.k * 100; }), backgroundColor: JY.css("--accent-2") },
         { label: baseLabel, data: r.map(function (x) { return x[base] * 100; }), backgroundColor: JY.css("--accent") }] },
       options: { indexAxis: "y", plugins: { tooltip: { callbacks: { label: function (c) {
           var x = r[c.dataIndex], s = c.dataset.label.split(" (")[0] + ": " + JY.fmt(c.parsed.x, { maximumFractionDigits: 1 }) + " %";

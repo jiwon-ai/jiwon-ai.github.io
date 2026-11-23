@@ -12,13 +12,16 @@ def page(body, title_fr, title_en, desc, scripts=""):
 <meta name="title-fr" content="{title_fr}">
 <meta name="title-en" content="{title_en}">
 <meta name="description" content="{desc}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/site.js"></script>
 </head>
 <body>
 <nav class="nav"><div class="wrap">
-  <a class="brand" href="index.html">Jiwon Yi</a>
+  <a class="brand" href="index.html"><span class="mono">JY</span>Jiwon Yi</a>
   <a class="link" href="index.html#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a>
+  <a class="link opt" href="index.html#competences"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
   <a class="link opt" href="index.html#parcours"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
   <a class="link opt" href="mailto:jiwonyi.data@gmail.com">Contact</a>
   <div class="langsw" role="group" aria-label="Language"><button data-lang="fr" aria-pressed="true">FR</button><button data-lang="en" aria-pressed="false">EN</button></div>
@@ -38,7 +41,8 @@ def page(body, title_fr, title_en, desc, scripts=""):
 
 PAGES = {
  "index.html": ("Jiwon Yi — Data Analyst à Paris", "Jiwon Yi — Data Analyst in Paris",
-                "Jiwon Yi, Data Analyst à Paris : SQL, Python, BI. Études de cas en retail, beauté et finance.", ""),
+                "Jiwon Yi, Data Analyst à Paris : SQL, Python, BI. Études de cas en retail, beauté et finance.",
+                '<script src="assets/chart.umd.js"></script><script src="assets/home.js"></script>'),
  "retail.html": ("Analyse retail — Jiwon Yi", "Retail analytics — Jiwon Yi",
                  "Étude de cas : 1,07 M de lignes de ventes, modèle SQL, rétention par cohorte, RFM, tableau de bord interactif.",
                  '<script src="assets/chart.umd.js"></script><script src="assets/retail.js"></script>'),
