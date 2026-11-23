@@ -21,6 +21,7 @@ def page(body, title_fr, title_en, desc, scripts=""):
 <nav class="nav"><div class="wrap">
   <a class="brand" href="index.html"><span class="mono">JY</span>Jiwon Yi</a>
   <a class="link" href="index.html#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a>
+  <a class="link opt" href="index.html#ia"><span lang="fr">IA</span><span lang="en">AI</span></a>
   <a class="link opt" href="index.html#competences"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
   <a class="link opt" href="index.html#parcours"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
   <a class="link opt" href="mailto:jiwonyi.data@gmail.com">Contact</a>
