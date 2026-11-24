@@ -52,6 +52,8 @@ PAGES = {
  "kbeauty.html": ("K-beauty vs rayon européen — Jiwon Yi", "K-beauty vs the European shelf — Jiwon Yi",
                   "Étude de cas : formules de 2 608 soins visage, marques coréennes vs autres, tests statistiques.",
                   '<script src="assets/chart.umd.js"></script><script src="assets/kbeauty.js"></script>'),
+ "parisdisparu.html": ("Paris Disparu, jeu Game Boy Color — Jiwon Yi", "Paris Disparu, a Game Boy Color game — Jiwon Yi",
+                       "Projet personnel : jeu d'exploration Game Boy Color dans les Halles de 1967, écrit en C avec un assistant IA, en anglais et en coréen.", ""),
  "thesis.html": ("Mémoire : trading adaptatif — Jiwon Yi", "Thesis: regime-adaptive trading — Jiwon Yi",
                  "Mémoire Paris 1 : classification de régimes de marché et stratégie adaptative sur Nasdaq et or.",
                  '<script src="assets/chart.umd.js"></script><script src="assets/thesis.js"></script>'),
