@@ -228,3 +228,6 @@ section#ia .card,section#ia .aiflow{background:var(--surface)}
 .hero .sub{font:500 clamp(1.15rem,2.2vw,1.45rem)/1.35 var(--sans);color:var(--fg);margin:-6px 0 18px;max-width:620px}
 .profile .facts div:first-child{border-top:0;padding-top:0}
 .case-hero p.eyebrow{font-size:.78rem;color:var(--faint);margin:0 0 12px;max-width:none}
+/* Paris Disparu: Game Boy screenshots, keep pixels sharp */
+.sechead.side{margin-top:44px}
+.phones.gb img,.case .viz img.px{image-rendering:pixelated;border-radius:6px}
